@@ -21,6 +21,13 @@ public class Form implements HttpHandler {
 
         // Send a form if it wasn't submitted yet.
         if(method.equals("GET")){
+            String[][] postData = {{"dqwdqwdqwdqwdqwdqw", "Bart", "bartp@gmail.com", "25.04.2074"},
+                                   {"dqwdqwdqwdqwdqwdqw", "Bart", "bartp@gmail.com", "25.04.2074"},
+                                   {"dqwdqwdqwdqwdqwdqw", "Bart", "bartp@gmail.com", "25.04.2074"}};
+
+            JtwigTemplate template = JtwigTemplate.classpathTemplate("templates/template.twig");
+
+            JtwigModel model = JtwigModel.newModel();
             //Tutaj chcę wrzucić tworzenie się layoutu strony poprzez jTwiga
         }
 

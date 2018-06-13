@@ -19,22 +19,25 @@
             </form>
         </div>
         <div class="postbox">
-            <div class="postrow">
-                <label>Message</label>
-                <div class="textbox"><p>sdfADFADsfasdfasdFasdFasDwfeeeeeeeeeeeeeeeeeeeeeF</p></div>
-            </div>
-            <div class="postrow">
-                <label>Name</label>
-                <div class="textbox"><p>dsfAFdas</p></div>
-            </div>
-            <div class="postrow">
-                <label>Email</label>
-                <div class="textbox"><p>dsfAFdas</p></div>
-            </div>
-            <div class="postrow">
-                <label>Date</label>
-                <div class="textbox"><p>dsfAFdas</p></div>
-            </div>
+            {% for row in postData %}
+
+                <div class="postrow">
+                    <label>Message</label>
+                    <div class="textbox"><p>{{row[0]}}</p></div>
+                </div>
+                <div class="postrow">
+                    <label>Name</label>
+                    <div class="textbox"><p>{{row[1]}}</p></div>
+                </div>
+                <div class="postrow">
+                    <label>Email</label>
+                    <div class="textbox"><p>{{row[2]}}</p></div>
+                </div>
+                <div class="postrow">
+                    <label>Date</label>
+                    <div class="textbox"><p>{{row[3]}}</p></div>
+                </div>
+            {% endfor %}
         </div>
     </body>
     <script src="js/messageform.js"></script>
