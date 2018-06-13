@@ -32,7 +32,6 @@ public class Form implements HttpHandler {
             model.with("postData", postData);
 
             response = template.render(model);
-            //Tutaj chcę wrzucić tworzenie się layoutu strony poprzez jTwiga
         }
 
         // If the form was submitted, retrieve it's content.
@@ -46,7 +45,7 @@ public class Form implements HttpHandler {
 
             response = "<html><body>" +
                     "<h1>Hello " +
-                    inputs.get("firstname") + " " + inputs.get("lastname") +
+                    inputs.get("Name") + " " + inputs.get("Message") + "" + inputs.get("Email") +
                     "!</h1>" +
                     "</body><html>";
         }
