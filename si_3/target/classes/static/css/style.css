@@ -1,0 +1,226 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*CUSTOM*/
+
+header {
+    height: 80px;
+    background-color: rgb(8, 8, 122);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1 {
+    font-family: 'Pacifico', cursive;
+    color: white;
+    /* justify-content: center; */
+    /* text-align: center; */
+    font-size: 43px;
+}
+.addbutton {
+  border-radius: 50%;
+  margin-top: 8%;
+  display: flex;
+  justify-content: center;
+}
+.addbutton button{
+  cursor: pointer;
+  background-color: rgba(240, 248, 255, 0);
+  font-family: 'Pacifico', cursive;
+  color: rgba(8, 32, 168, 0.616);
+  font-size: 25px;
+  text-shadow: 0 0 1px rgb(250, 3, 3), 0 0 1px rgb(248, 3, 3);
+  text-align: center;
+  border: none;
+}
+.savebutton {
+  margin-top: 8%;
+}
+.savebutton button {
+  cursor: pointer;
+  background-color: rgba(240, 248, 255, 0);
+  font-family: 'Pacifico', cursive;
+  color: rgba(8, 32, 168, 0.616);
+  font-size: 25px;
+  text-shadow: 0 0 1px rgb(250, 3, 3), 0 0 1px rgb(248, 3, 3);
+  text-align: center;
+  border: 2px solid white;
+}
+.savebutton button:hover {
+  text-shadow: 0 0 3px rgb(245, 3, 3), 0 0 5px rgb(245, 7, 11);
+}
+.addbutton button:hover {
+  text-shadow: 0 0 3px rgb(245, 3, 3), 0 0 5px rgb(245, 7, 11);
+}
+.animate {
+  -webkit-animation: animatezoom 0.8s;
+  animation: animatezoom 0.8s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+textarea {
+  height: 100px;
+}
+
+input {
+  margin: auto;
+  color: #071d58;
+}
+
+input[type=text] {
+  padding: 6px;
+  border: 2px solid #fdfdfa;
+  background-color: #6a56e909;
+  border-radius: 4px;
+  resize: vertical;
+  color: rgb(9, 40, 97);
+  width: 91.6%;
+}
+input[type=text]:hover {
+  border: 3px solid white;
+  padding: 5px;
+}
+::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+label {
+  padding: 0%;
+  color: #f9f8f8fd;
+  font-size: 15px;
+  font-family: 'Pacifico', cursive;
+}
+/* POD PRZYCISK SAVE */
+/* input[type=submit] {
+  background-color: #fcce02cb;
+  color: rgb(10, 1, 1);
+  padding: 5px 10px;
+  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Anton', sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+} */
+
+input[type=submit]:hover {
+  opacity: 0.7;
+}
+/* #form_elements {
+  position:relative;
+  padding: 10px;
+  padding-right:30px; 
+  padding-left:20px; 
+  max-width:500px; 
+  max-height:500px; 
+  margin-top: 25%; 
+  background-color: rgb(8, 8, 122); 
+  border:2px solid white; 
+  border-radius:5%; 
+  display:flex; 
+  flex-direction: column;
+} */
+.col-25 {
+  padding: 2%;
+}
+.col-75 {
+  background-color: #fdfdfa;
+  display: flex;
+}
+
+.postbox {
+  display: flex;
+  border: 2px solid rgb(8, 8, 122);
+  border-radius: 5%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdfdfa;
+  width: 250px;
+  padding: 2%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.postrow {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid rgb(8, 8, 122);
+  justify-content: left;
+  border-radius: 5%;
+  background-color: rgb(8, 8, 122);
+  min-height: 30px;
+  width: 80%;
+  padding: 2%;
+  margin-bottom: 5px;
+}
+
+.postrow label {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.textbox {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 30px; 
+  font-family: 'Indie Flower', cursive;
+  color: white;
+  font-size: 14px;
+}
+
+.textbox p {
+  word-break: break-all;
+}
