@@ -1,5 +1,8 @@
 package com.codecool.server;
 
+import com.codecool.server.DAO.DAO;
+import com.codecool.server.DAO.postDAO;
+import com.codecool.server.Post.Post;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -8,6 +11,7 @@ import org.jtwig.JtwigTemplate;
 import java.io.*;
 import java.net.URLDecoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -17,19 +21,19 @@ public class Form implements HttpHandler {
 
         String response = "";
         String method = httpExchange.getRequestMethod();
+        DAO postDao = new postDAO();
 
 
         // Send a form if it wasn't submitted yet.
         if(method.equals("GET")){
-            String[][] postData = {{"dqwdqwdqwdqwdqwdqw", "Bart", "bartp@gmail.com", "25.04.2074"},
-                                   {"dqwdqwdqwdqwdqwdqw", "Bart", "bartp@gmail.com", "25.04.2074"},
-                                   {"dqwdqwdqwdqwdqwdqw", "Bart", "bartp@gmail.com", "25.04.2074"}};
+
+            List<Post> postsList = postDao.getAllPosts();
 
             JtwigTemplate template = JtwigTemplate.classpathTemplate("templates/template.twig");
 
             JtwigModel model = JtwigModel.newModel();
 
-            model.with("postData", postData);
+            model.with("postData", postsList);
 
             response = template.render(model);
         }
@@ -43,11 +47,19 @@ public class Form implements HttpHandler {
             System.out.println(formData);
             Map inputs = parseFormData(formData);
 
-            response = "<html><body>" +
-                    "<h1>Hello " +
-                    inputs.get("Name") + " " + inputs.get("Message") + "" + inputs.get("Email") +
-                    "!</h1>" +
-                    "</body><html>";
+            Post post = new Post(inputs.get("Message").toString(), inputs.get("Name").toString(),
+                                 inputs.get("Email").toString(), null);
+
+            System.out.println(post.email);
+            System.out.println(post.name);
+            System.out.println(post.message);
+
+            postDao.insertPost(post);
+
+//            String hostPort = httpExchange.getRequestHeaders().get("HOST").get(0);
+//            String whereTo = "/";
+//            httpExchange.getResponseHeaders().set("Location", "http://" + hostPort + whereTo);
+//            httpExchange.sendResponseHeaders(301, -1);
         }
 
         httpExchange.sendResponseHeaders(200, response.length());

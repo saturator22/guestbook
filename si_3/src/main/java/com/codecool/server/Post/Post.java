@@ -7,7 +7,7 @@ public class Post {
     public String email;
     public String date;
 
-    Post(String message, String name, String email, String date) {
+    public Post(String message, String name, String email, String date) {
         this.message = message;
         this.name = name;
         this.email = email;

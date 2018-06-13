@@ -13,32 +13,32 @@
             <button onclick="createForm()" id="addstudent">Add Post</button>
         </div>
         <div id="studentsform">
-            <form id="form_tag" method="POST">
+            <form id="form_tag" method="POST" onsubmit="setTimeout(function(){window.location.reload();},10)">
                 <div id="form"></div>
                 <div id="add"></div>
             </form>
         </div>
-            {% for row in postData %}
+            {% for post in postData %}
 
                 <div class="postbox">
                     <div class="postrow">
                         <label>Message</label>
-                        <div class="textbox"><p>{{row[0]}}</p></div>
+                        <div class="textbox"><p>{{post.message}}</p></div>
                     </div>
                     <div class="postrow">
                         <label>Name</label>
-                        <div class="textbox"><p>{{row[1]}}</p></div>
+                        <div class="textbox"><p>{{post.name}}</p></div>
                     </div>
                     <div class="postrow">
                         <label>Email</label>
-                        <div class="textbox"><p>{{row[2]}}</p></div>
+                        <div class="textbox"><p>{{post.email}}</p></div>
                     </div>
                     <div class="postrow">
                         <label>Date</label>
-                        <div class="textbox"><p>{{row[3]}}</p></div>
+                        <div class="textbox"><p>{{post.date}}</p></div>
                     </div>
                 </div>
             {% endfor %}
     </body>
-     <script src="/static/js/messageform.js"></script>
+     <script src="static/js/messageform.js"></script>
 </html>

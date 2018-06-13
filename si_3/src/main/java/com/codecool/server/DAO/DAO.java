@@ -5,6 +5,6 @@ import java.util.List;
 public interface DAO {
 
     List<Post> getAllPosts();
-    void insertPost();
+    boolean insertPost(Post post);
 
 }

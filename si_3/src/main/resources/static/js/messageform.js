@@ -32,6 +32,7 @@ function createFormElements() {
     
 }
 function createFormColumns(name) {
+
     let form = document.getElementById("form");
 
     let row = document.createElement("div");
@@ -94,5 +95,6 @@ function addSaveButton() {
     add.appendChild(button);
     
 }
+
 
 
