@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Mentor</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+        <title>GuestBook</title>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css" media="screen">
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico" rel="stylesheet">
     </head>
     <body>
@@ -18,24 +18,27 @@
                 <div id="add"></div>
             </form>
         </div>
-        <div class="postbox">
-            <div class="postrow">
-                <label>Message</label>
-                <div class="textbox"><p>sdfADFADsfasdfasdFasdFasDwfeeeeeeeeeeeeeeeeeeeeeF</p></div>
+            {% for row in postData %}
+
+            <div class="postbox">
+                <div class="postrow">
+                    <label>Message</label>
+                    <div class="textbox"><p>{{row[0]}}</p></div>
+                </div>
+                <div class="postrow">
+                    <label>Name</label>
+                    <div class="textbox"><p>{{row[1]}}</p></div>
+                </div>
+                <div class="postrow">
+                    <label>Email</label>
+                    <div class="textbox"><p>{{row[2]}}</p></div>
+                </div>
+                <div class="postrow">
+                    <label>Date</label>
+                    <div class="textbox"><p>{{row[3]}}</p></div>
+                </div>
             </div>
-            <div class="postrow">
-                <label>Name</label>
-                <div class="textbox"><p>dsfAFdas</p></div>
-            </div>
-            <div class="postrow">
-                <label>Email</label>
-                <div class="textbox"><p>dsfAFdas</p></div>
-            </div>
-            <div class="postrow">
-                <label>Date</label>
-                <div class="textbox"><p>dsfAFdas</p></div>
-            </div>
-        </div>
+            {% endfor %}
     </body>
-    <script src="js/messageform.js"></script>
+     <script src="/static/js/messageform.js"></script>
 </html>

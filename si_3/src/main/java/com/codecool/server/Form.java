@@ -28,6 +28,10 @@ public class Form implements HttpHandler {
             JtwigTemplate template = JtwigTemplate.classpathTemplate("templates/template.twig");
 
             JtwigModel model = JtwigModel.newModel();
+
+            model.with("postData", postData);
+
+            response = template.render(model);
             //Tutaj chcę wrzucić tworzenie się layoutu strony poprzez jTwiga
         }
 
